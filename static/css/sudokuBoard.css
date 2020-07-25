@@ -1,5 +1,5 @@
 td{
-  width: 4rem;
+  width: 2rem;
   height: 2rem;
   border: 1px solid #ccc;
   text-align: center;
@@ -8,4 +8,14 @@ td{
 }
 body {
   padding: 1rem;
+}
+input{
+    width: 2rem;
+    height: 2rem;
+    border: 1px solid #ccc;
+    text-align: center;
+    background: lightblue;
+    border-color: white;
+    font-size: 5px
+    font_family: Helvetica
 }

@@ -3,112 +3,141 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static' ,filename='css/sudokuBoard.css') }}">
-    <title>Sudoku-Borad</title>
-    
+    <title>Sudoku-Board</title>
+    <script>
+
+        function setValue(i, j, val){
+
+            var ids = 9*i +j;
+            var n = ids.toString();
+            document.getElementById(n).setAttribute("value", val);
+            document.getElementById(n).disabled = true;
+        }
+
+        function fillValues(){
+
+            {% for i in range(9) %}
+                {% for j in range(9) %}
+                    var val = {{ grids[i][j] }};
+                    var row = {{i}};
+                    var col = {{j}};
+                    if(val!=0)
+                        setValue(row, col, val);
+                {% endfor %}
+            {% endfor %}
+
+        }
+
+    </script>
 </head>
 <body>
     <center>
         <table>
             <tr>
-                <td id="00">00</td>
-                <td id="01">01</td>
-                <td id="02">02</td>
-                <td id="03">03</td>
-                <td id="04">04</td>
-                <td id="05">05</td>
-                <td id="06">06</td>
-                <td id="07">07</td>
-                <td id="08">08</td>
+                <td><input type="text" maxlength="1" id="0"></td>
+                <td><input type="text" maxlength="1" id="1"></td>
+                <td><input type="text" maxlength="1" id="2"></td>
+                <td><input type="text" maxlength="1" id="3"></td>
+                <td><input type="text" maxlength="1" id="4"></td>
+                <td><input type="text" maxlength="1" id="5"></td>
+                <td><input type="text" maxlength="1" id="6"></td>
+                <td><input type="text" maxlength="1" id="7"></td>
+                <td><input type="text" maxlength="1" id="8"></td>
             </tr>
             <tr>
-                <td id="10">10</td>
-                <td id="11">11</td>
-                <td id="12">12</td>
-                <td id="13">13</td>
-                <td id="14">14</td>
-                <td id="15">15</td>
-                <td id="16">16</td>
-                <td id="17">17</td>
-                <td id="18">18</td>
+                <td><input type="text" maxlength="1" id="9"></td>
+                <td><input type="text" maxlength="1" id="10"></td>
+                <td><input type="text" maxlength="1" id="11"></td>
+                <td><input type="text" maxlength="1" id="12"></td>
+                <td><input type="text" maxlength="1" id="13"></td>
+                <td><input type="text" maxlength="1" id="14"></td>
+                <td><input type="text" maxlength="1" id="15"></td>
+                <td><input type="text" maxlength="1" id="16"></td>
+                <td><input type="text" maxlength="1" id="17"></td>
             </tr>
             <tr>
-                <td id="20">20</td>
-                <td id="21">21</td>
-                <td id="22">22</td>
-                <td id="23">23</td>
-                <td id="24">24</td>
-                <td id="25">25</td>
-                <td id="26">26</td>
-                <td id="27">27</td>
-                <td id="28">28</td>
+                <td><input type="text" maxlength="1" id="18"></td>
+                <td><input type="text" maxlength="1" id="19"></td>
+                <td><input type="text" maxlength="1" id="20"></td>
+                <td><input type="text" maxlength="1" id="21"></td>
+                <td><input type="text" maxlength="1" id="22"></td>
+                <td><input type="text" maxlength="1" id="23"></td>
+                <td><input type="text" maxlength="1" id="24"></td>
+                <td><input type="text" maxlength="1" id="25"></td>
+                <td><input type="text" maxlength="1" id="26"></td>
             </tr>
             <tr>
-                <td id="30">30</td>
-                <td id="31">31</td>
-                <td id="32">32</td>
-                <td id="33">33</td>
-                <td id="34">34</td>
-                <td id="35">35</td>
-                <td id="36">36</td>
-                <td id="37">37</td>
-                <td id="38">38</td>
+                <td><input type="text" maxlength="1" id="27"></td>
+                <td><input type="text" maxlength="1" id="28"></td>
+                <td><input type="text" maxlength="1" id="29"></td>
+                <td><input type="text" maxlength="1" id="30"></td>
+                <td><input type="text" maxlength="1" id="31"></td>
+                <td><input type="text" maxlength="1" id="32"></td>
+                <td><input type="text" maxlength="1" id="33"></td>
+                <td><input type="text" maxlength="1" id="34"></td>
+                <td><input type="text" maxlength="1" id="35"></td>
             </tr>
             <tr>
-                <td id="40">40</td>
-                <td id="41">41</td>
-                <td id="42">42</td>
-                <td id="43">43</td>
-                <td id="44">44</td>
-                <td id="45">45</td>
-                <td id="46">46</td>
-                <td id="47">47</td>
-                <td id="48">48</td>
+                <td><input type="text" maxlength="1" id="36"></td>
+                <td><input type="text" maxlength="1" id="37"></td>
+                <td><input type="text" maxlength="1" id="38"></td>
+                <td><input type="text" maxlength="1" id="39"></td>
+                <td><input type="text" maxlength="1" id="40"></td>
+                <td><input type="text" maxlength="1" id="41"></td>
+                <td><input type="text" maxlength="1" id="42"></td>
+                <td><input type="text" maxlength="1" id="43"></td>
+                <td><input type="text" maxlength="1" id="44"></td>
             </tr>
             <tr>
-                <td id="50">50</td>
-                <td id="51">51</td>
-                <td id="52">52</td>
-                <td id="53">53</td>
-                <td id="54">54</td>
-                <td id="55">55</td>
-                <td id="56">56</td>
-                <td id="57">57</td>
-                <td id="58">58</td>
+                <td><input type="text" maxlength="1" id="45"></td>
+                <td><input type="text" maxlength="1" id="46"></td>
+                <td><input type="text" maxlength="1" id="47"></td>
+                <td><input type="text" maxlength="1" id="48"></td>
+                <td><input type="text" maxlength="1" id="49"></td>
+                <td><input type="text" maxlength="1" id="50"></td>
+                <td><input type="text" maxlength="1" id="51"></td>
+                <td><input type="text" maxlength="1" id="52"></td>
+                <td><input type="text" maxlength="1" id="53"></td>
             </tr>
             <tr>
-                <td id="60">60</td>
-                <td id="61">61</td>
-                <td id="62">62</td>
-                <td id="63">63</td>
-                <td id="64">64</td>
-                <td id="65">65</td>
-                <td id="66">66</td>
-                <td id="67">67</td>
-                <td id="68">68</td>
+                <td><input type="text" maxlength="1" id="54"></td>
+                <td><input type="text" maxlength="1" id="55"></td>
+                <td><input type="text" maxlength="1" id="56"></td>
+                <td><input type="text" maxlength="1" id="57"></td>
+                <td><input type="text" maxlength="1" id="58"></td>
+                <td><input type="text" maxlength="1" id="59"></td>
+                <td><input type="text" maxlength="1" id="60"></td>
+                <td><input type="text" maxlength="1" id="61"></td>
+                <td><input type="text" maxlength="1" id="62"></td>
             </tr>
             <tr>
-                <td id="70">70</td>
-                <td id="71">71</td>
-                <td id="72">72</td>
-                <td id="73">73</td>
-                <td id="74">74</td>
-                <td id="75">75</td>
-                <td id="76">76</td>
-                <td id="77">77</td>
-                <td id="78">78</td>
+                <td><input type="text" maxlength="1" id="63"></td>
+                <td><input type="text" maxlength="1" id="64"></td>
+                <td><input type="text" maxlength="1" id="65"></td>
+                <td><input type="text" maxlength="1" id="66"></td>
+                <td><input type="text" maxlength="1" id="67"></td>
+                <td><input type="text" maxlength="1" id="68"></td>
+                <td><input type="text" maxlength="1" id="69"></td>
+                <td><input type="text" maxlength="1" id="70"></td>
+                <td><input type="text" maxlength="1" id="71"></td>
             </tr>
             <tr>
-                <td id="80">80</td>
-                <td id="81">81</td>
-                <td id="82">82</td>
-                <td id="83">83</td>
-                <td id="84">84</td>
-                <td id="85">85</td>
-                <td id="86">86</td>
-                <td id="87">87</td>
-                <td id="88">88</td>
+                <td><input type="text" maxlength="1" id="72"></td>
+                <td><input type="text" maxlength="1" id="73"></td>
+                <td><input type="text" maxlength="1" id="74"></td>
+                <td><input type="text" maxlength="1" id="75"></td>
+                <td><input type="text" maxlength="1" id="76"></td>
+                <td><input type="text" maxlength="1" id="77"></td>
+                <td><input type="text" maxlength="1" id="78"></td>
+                <td><input type="text" maxlength="1" id="79"></td>
+                <td><input type="text" maxlength="1" id="80"></td>
             </tr>
+
         </table>
+        <script> fillValues()</script>
+        {% for gr in grids %}
+            {{ gr }}
+        {% endfor %}
     </center>
 </body>
 </html>

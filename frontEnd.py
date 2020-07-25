@@ -1,12 +1,13 @@
 from flask import Flask, render_template
+from backEnd import getGrid, solve, isSafe
 
 a = [5, 8, 0, 2, 5, 89, -4, 4356, -365]
-
+grid =  getGrid()
 app = Flask(__name__)
 
 @app.route('/')
 def hello():
-    return render_template('board.html')
+    return render_template('board.html', grids = grid)
 
 @app.route('/home/<int:name>')
 def hel(name):
