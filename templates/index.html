@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>Home</title>
+{% endblock %}
+
+{% block body %}
+    <h1>HOME PAGE</h1>
+
+    {% for num in data%}
+        {% if num > 0%}
+            {{num}}
+        {% endif%}
+    {% endfor%}
+{% endblock %}
