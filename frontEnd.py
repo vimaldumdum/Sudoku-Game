@@ -11,8 +11,8 @@ grid = copy.deepcopy(sol)
 solve(sol)
 
 
-print(grid)
-print(sol)
+#print(grid)
+#print(sol)
 
 @app.route('/')
 def hello():
