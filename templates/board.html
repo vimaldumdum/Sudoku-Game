@@ -3,141 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static' ,filename='css/sudokuBoard.css') }}">
+    <link rel="shortcut icon" href="#" />
+    <script type="text/javascript" src="/static/js/support.js"></script>
     <title>Sudoku-Board</title>
-    <script>
-
-        function setValue(i, j, val){
-
-            var ids = 9*i +j;
-            var n = ids.toString();
-            document.getElementById(n).setAttribute("value", val);
-            document.getElementById(n).disabled = true;
-        }
-
-        function fillValues(){
-
-            {% for i in range(9) %}
-                {% for j in range(9) %}
-                    var val = {{ grids[i][j] }};
-                    var row = {{i}};
-                    var col = {{j}};
-                    if(val!=0)
-                        setValue(row, col, val);
-                {% endfor %}
-            {% endfor %}
-
-        }
-
-    </script>
 </head>
 <body>
     <center>
         <table>
             <tr>
-                <td><input type="text" maxlength="1" id="0"></td>
-                <td><input type="text" maxlength="1" id="1"></td>
-                <td><input type="text" maxlength="1" id="2"></td>
-                <td><input type="text" maxlength="1" id="3"></td>
-                <td><input type="text" maxlength="1" id="4"></td>
-                <td><input type="text" maxlength="1" id="5"></td>
-                <td><input type="text" maxlength="1" id="6"></td>
-                <td><input type="text" maxlength="1" id="7"></td>
-                <td><input type="text" maxlength="1" id="8"></td>
+                <td><input type="text" maxlength="1" id="0" onclick="clickFun(id)"></td>
+                <td><input type="text" maxlength="1" id="1" onclick="clickFun(id)"></td>
+                <td><input type="text" maxlength="1" id="2" onclick="clickFun(id)"></td>
+                <td><input type="text" maxlength="1" id="3" onclick="clickFun(id)"></td>
+                <td><input type="text" maxlength="1" id="4" onclick="clickFun(id)"></td>
+                <td><input type="text" maxlength="1" id="5" onclick="clickFun(id)"></td>
+                <td><input type="text" maxlength="1" id="6" onclick="clickFun(id)"></td>
+                <td><input type="text" maxlength="1" id="7" onclick="clickFun(id)"></td>
+                <td><input type="text" maxlength="1" id="8" onclick="clickFun(id)"></td>
             </tr>
             <tr>
-                <td><input type="text" maxlength="1" id="9"></td>
-                <td><input type="text" maxlength="1" id="10"></td>
-                <td><input type="text" maxlength="1" id="11"></td>
-                <td><input type="text" maxlength="1" id="12"></td>
-                <td><input type="text" maxlength="1" id="13"></td>
-                <td><input type="text" maxlength="1" id="14"></td>
-                <td><input type="text" maxlength="1" id="15"></td>
-                <td><input type="text" maxlength="1" id="16"></td>
-                <td><input type="text" maxlength="1" id="17"></td>
+                <td><input type="text" maxlength="1" id="9" onclick="clickFun(id)"></td>
+                <td><input type="text" maxlength="1" id="10" onclick="clickFun(id)"></td>
+                <td><input type="text" maxlength="1" id="11" onclick="clickFun(id)"></td>
+                <td><input type="text" maxlength="1" id="12" onclick="clickFun(id)"></td>
+                <td><input type="text" maxlength="1" id="13" onclick="clickFun(id)"></td>
+                <td><input type="text" maxlength="1" id="14" onclick="clickFun(id)"></td>
+                <td><input type="text" maxlength="1" id="15" onclick="clickFun(id)"></td>
+                <td><input type="text" maxlength="1" id="16" onclick="clickFun(id)"></td>
+                <td><input type="text" maxlength="1" id="17" onclick="clickFun(id)"></td>
             </tr>
             <tr>
-                <td><input type="text" maxlength="1" id="18"></td>
-                <td><input type="text" maxlength="1" id="19"></td>
-                <td><input type="text" maxlength="1" id="20"></td>
-                <td><input type="text" maxlength="1" id="21"></td>
-                <td><input type="text" maxlength="1" id="22"></td>
-                <td><input type="text" maxlength="1" id="23"></td>
-                <td><input type="text" maxlength="1" id="24"></td>
-                <td><input type="text" maxlength="1" id="25"></td>
-                <td><input type="text" maxlength="1" id="26"></td>
+                <td><input type="text" maxlength="1" id="18" onclick="clickFun(id)"></td>
+                <td><input type="text" maxlength="1" id="19" onclick="clickFun(id)"></td>
+                <td><input type="text" maxlength="1" id="20" onclick="clickFun(id)"></td>
+                <td><input type="text" maxlength="1" id="21" onclick="clickFun(id)"></td>
+                <td><input type="text" maxlength="1" id="22" onclick="clickFun(id)"></td>
+                <td><input type="text" maxlength="1" id="23" onclick="clickFun(id)"></td>
+                <td><input type="text" maxlength="1" id="24" onclick="clickFun(id)"></td>
+                <td><input type="text" maxlength="1" id="25" onclick="clickFun(id)"></td>
+                <td><input type="text" maxlength="1" id="26" onclick="clickFun(id)"></td>
             </tr>
             <tr>
-                <td><input type="text" maxlength="1" id="27"></td>
-                <td><input type="text" maxlength="1" id="28"></td>
-                <td><input type="text" maxlength="1" id="29"></td>
-                <td><input type="text" maxlength="1" id="30"></td>
-                <td><input type="text" maxlength="1" id="31"></td>
-                <td><input type="text" maxlength="1" id="32"></td>
-                <td><input type="text" maxlength="1" id="33"></td>
-                <td><input type="text" maxlength="1" id="34"></td>
-                <td><input type="text" maxlength="1" id="35"></td>
+                <td><input type="text" maxlength="1" id="27" onclick="clickFun(id)"></td>
+                <td><input type="text" maxlength="1" id="28" onclick="clickFun(id)"></td>
+                <td><input type="text" maxlength="1" id="29" onclick="clickFun(id)"></td>
+                <td><input type="text" maxlength="1" id="30" onclick="clickFun(id)"></td>
+                <td><input type="text" maxlength="1" id="31" onclick="clickFun(id)"></td>
+                <td><input type="text" maxlength="1" id="32" onclick="clickFun(id)"></td>
+                <td><input type="text" maxlength="1" id="33" onclick="clickFun(id)"></td>
+                <td><input type="text" maxlength="1" id="34" onclick="clickFun(id)"></td>
+                <td><input type="text" maxlength="1" id="35" onclick="clickFun(id)"></td>
             </tr>
             <tr>
-                <td><input type="text" maxlength="1" id="36"></td>
-                <td><input type="text" maxlength="1" id="37"></td>
-                <td><input type="text" maxlength="1" id="38"></td>
-                <td><input type="text" maxlength="1" id="39"></td>
-                <td><input type="text" maxlength="1" id="40"></td>
-                <td><input type="text" maxlength="1" id="41"></td>
-                <td><input type="text" maxlength="1" id="42"></td>
-                <td><input type="text" maxlength="1" id="43"></td>
-                <td><input type="text" maxlength="1" id="44"></td>
+                <td><input type="text" maxlength="1" id="36" onclick="clickFun(id)"></td>
+                <td><input type="text" maxlength="1" id="37" onclick="clickFun(id)"></td>
+                <td><input type="text" maxlength="1" id="38" onclick="clickFun(id)"></td>
+                <td><input type="text" maxlength="1" id="39" onclick="clickFun(id)"></td>
+                <td><input type="text" maxlength="1" id="40" onclick="clickFun(id)"></td>
+                <td><input type="text" maxlength="1" id="41" onclick="clickFun(id)"></td>
+                <td><input type="text" maxlength="1" id="42" onclick="clickFun(id)"></td>
+                <td><input type="text" maxlength="1" id="43" onclick="clickFun(id)"></td>
+                <td><input type="text" maxlength="1" id="44" onclick="clickFun(id)"></td>
             </tr>
             <tr>
-                <td><input type="text" maxlength="1" id="45"></td>
-                <td><input type="text" maxlength="1" id="46"></td>
-                <td><input type="text" maxlength="1" id="47"></td>
-                <td><input type="text" maxlength="1" id="48"></td>
-                <td><input type="text" maxlength="1" id="49"></td>
-                <td><input type="text" maxlength="1" id="50"></td>
-                <td><input type="text" maxlength="1" id="51"></td>
-                <td><input type="text" maxlength="1" id="52"></td>
-                <td><input type="text" maxlength="1" id="53"></td>
+                <td><input type="text" maxlength="1" id="45" onclick="clickFun(id)"></td>
+                <td><input type="text" maxlength="1" id="46" onclick="clickFun(id)"></td>
+                <td><input type="text" maxlength="1" id="47" onclick="clickFun(id)"></td>
+                <td><input type="text" maxlength="1" id="48" onclick="clickFun(id)"></td>
+                <td><input type="text" maxlength="1" id="49" onclick="clickFun(id)"></td>
+                <td><input type="text" maxlength="1" id="50" onclick="clickFun(id)"></td>
+                <td><input type="text" maxlength="1" id="51" onclick="clickFun(id)"></td>
+                <td><input type="text" maxlength="1" id="52" onclick="clickFun(id)"></td>
+                <td><input type="text" maxlength="1" id="53" onclick="clickFun(id)"></td>
             </tr>
             <tr>
-                <td><input type="text" maxlength="1" id="54"></td>
-                <td><input type="text" maxlength="1" id="55"></td>
-                <td><input type="text" maxlength="1" id="56"></td>
-                <td><input type="text" maxlength="1" id="57"></td>
-                <td><input type="text" maxlength="1" id="58"></td>
-                <td><input type="text" maxlength="1" id="59"></td>
-                <td><input type="text" maxlength="1" id="60"></td>
-                <td><input type="text" maxlength="1" id="61"></td>
-                <td><input type="text" maxlength="1" id="62"></td>
+                <td><input type="text" maxlength="1" id="54" onclick="clickFun(id)"></td>
+                <td><input type="text" maxlength="1" id="55" onclick="clickFun(id)"></td>
+                <td><input type="text" maxlength="1" id="56" onclick="clickFun(id)"></td>
+                <td><input type="text" maxlength="1" id="57" onclick="clickFun(id)"></td>
+                <td><input type="text" maxlength="1" id="58" onclick="clickFun(id)"></td>
+                <td><input type="text" maxlength="1" id="59" onclick="clickFun(id)"></td>
+                <td><input type="text" maxlength="1" id="60" onclick="clickFun(id)"></td>
+                <td><input type="text" maxlength="1" id="61" onclick="clickFun(id)"></td>
+                <td><input type="text" maxlength="1" id="62" onclick="clickFun(id)"></td>
             </tr>
             <tr>
-                <td><input type="text" maxlength="1" id="63"></td>
-                <td><input type="text" maxlength="1" id="64"></td>
-                <td><input type="text" maxlength="1" id="65"></td>
-                <td><input type="text" maxlength="1" id="66"></td>
-                <td><input type="text" maxlength="1" id="67"></td>
-                <td><input type="text" maxlength="1" id="68"></td>
-                <td><input type="text" maxlength="1" id="69"></td>
-                <td><input type="text" maxlength="1" id="70"></td>
-                <td><input type="text" maxlength="1" id="71"></td>
+                <td><input type="text" maxlength="1" id="63" onclick="clickFun(id)"></td>
+                <td><input type="text" maxlength="1" id="64" onclick="clickFun(id)"></td>
+                <td><input type="text" maxlength="1" id="65" onclick="clickFun(id)"></td>
+                <td><input type="text" maxlength="1" id="66" onclick="clickFun(id)"></td>
+                <td><input type="text" maxlength="1" id="67" onclick="clickFun(id)"></td>
+                <td><input type="text" maxlength="1" id="68" onclick="clickFun(id)"></td>
+                <td><input type="text" maxlength="1" id="69" onclick="clickFun(id)"></td>
+                <td><input type="text" maxlength="1" id="70" onclick="clickFun(id)"></td>
+                <td><input type="text" maxlength="1" id="71" onclick="clickFun(id)"></td>
             </tr>
             <tr>
-                <td><input type="text" maxlength="1" id="72"></td>
-                <td><input type="text" maxlength="1" id="73"></td>
-                <td><input type="text" maxlength="1" id="74"></td>
-                <td><input type="text" maxlength="1" id="75"></td>
-                <td><input type="text" maxlength="1" id="76"></td>
-                <td><input type="text" maxlength="1" id="77"></td>
-                <td><input type="text" maxlength="1" id="78"></td>
-                <td><input type="text" maxlength="1" id="79"></td>
-                <td><input type="text" maxlength="1" id="80"></td>
+                <td><input type="text" maxlength="1" id="72" onclick="clickFun(id)"></td>
+                <td><input type="text" maxlength="1" id="73" onclick="clickFun(id)"></td>
+                <td><input type="text" maxlength="1" id="74" onclick="clickFun(id)"></td>
+                <td><input type="text" maxlength="1" id="75" onclick="clickFun(id)"></td>
+                <td><input type="text" maxlength="1" id="76" onclick="clickFun(id)"></td>
+                <td><input type="text" maxlength="1" id="77" onclick="clickFun(id)"></td>
+                <td><input type="text" maxlength="1" id="78" onclick="clickFun(id)"></td>
+                <td><input type="text" maxlength="1" id="79" onclick="clickFun(id)"></td>
+                <td><input type="text" maxlength="1" id="80" onclick="clickFun(id)"></td>
             </tr>
 
         </table>
-        <script> fillValues()</script>
-        {% for gr in grids %}
-            {{ gr }}
-        {% endfor %}
+        <script>
+            var grid={{grids}}
+            var solve={{solved}}
+            fillValues(grid);
+        </script>
     </center>
 </body>
 </html>

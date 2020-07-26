@@ -1,13 +1,22 @@
 from flask import Flask, render_template
-from backEnd import getGrid, solve, isSafe
+from backEnd import getGrids, solve, isSafe, getGrid
+import copy
 
-a = [5, 8, 0, 2, 5, 89, -4, 4356, -365]
-grid =  getGrid()
+
 app = Flask(__name__)
+
+sol = getGrid()
+grid = copy.deepcopy(sol)
+#print(grid)
+solve(sol)
+
+
+print(grid)
+print(sol)
 
 @app.route('/')
 def hello():
-    return render_template('board.html', grids = grid)
+    return render_template('board.html', grids = grid, solved = sol)
 
 @app.route('/home/<int:name>')
 def hel(name):

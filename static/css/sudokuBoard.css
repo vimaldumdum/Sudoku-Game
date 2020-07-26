@@ -3,7 +3,7 @@ td{
   height: 2rem;
   border: 1px solid #ccc;
   text-align: center;
-  background: lightblue;
+  background: lightgreen;
   border-color: white;
 }
 body {
@@ -14,7 +14,7 @@ input{
     height: 2rem;
     border: 1px solid #ccc;
     text-align: center;
-    background: lightblue;
+    background: lightgreen;
     border-color: white;
     font-size: 5px
     font_family: Helvetica

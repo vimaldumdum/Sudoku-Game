@@ -7,6 +7,10 @@ grid = [[3, 0, 6, 5, 0, 8, 4, 0, 0],
             [1, 3, 0, 0, 0, 0, 2, 5, 0],
             [0, 0, 0, 0, 0, 0, 0, 7, 4],
             [0, 0, 5, 2, 0, 6, 3, 0, 0]]
+sol = list(grid)
+
+def getGrids():
+    return grid, sol
 
 def findMissing(grid):
     miss = list()
@@ -87,8 +91,6 @@ def solve(grid):
 
             grid[row][col] = val[i]
         return True
-
-        print(len(val))
     else:
         print("Solution does not exists")
         return False
@@ -100,9 +102,4 @@ def printGrid(grid):
 
 def getGrid():
     return grid
-if __name__ == "__main__":
 
-
-    solve(grid)
-
-    printGrid(grid)
