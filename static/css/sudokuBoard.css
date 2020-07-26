@@ -1,26 +1,99 @@
 td{
-  width: 3rem;
+   width: 3rem;
   height: 3rem;
+
   border: 1px solid #ccc;
   text-align: center;
-  background: lightgreen;
   font-size-adjust: 25px;
-  border-color: white;
+  background: white;
+  border-color: grey;
+}
+#tab{
+    padding: 10px;
 }
 body {
   padding: 1rem;
+    overflow: hidden;
+
 }
 input{
-    width: 3rem;
-    height: 3rem;
+    width: 42px;
+  height: 42px;
+
     border: 1px solid #ccc;
     text-align: center;
-    background: lightgreen;
-    border-color: white;
-    font-size-adjust: 25px
-    font_family: Helvetica
+    background:transparent;
+    background-color: transparent;
+    font-size: 25px;
+    font-family: Helvetica;
+    color: #ff6600;
 }
 
-#0, #1, #2, #6, #7, #8{
+#t1, #t2, #t3, #t4, #t5,
+#t10, #t9, #t8, #t7, #t6,
+#t15, #t14, #t13, #t12, #t11,
+#t20, #t19, #t18, #t17, #t16,
+#t21, #t22, #t23, #t24, #t25,
+#t30, #t29, #t28, #t27, #t26,
+#t35, #t34, #t33, #t32, #t31,
+#t40, #t39, #t38, #t37, #t36,
+#t41, #t42, #t43, #t44, #t45{
 
+    background: lightgreen;
+
+}
+
+#division{
+    background: rgba(208,208,208, 0.5);
+    width: 35%;
+    height: 10%;
+    padding: 10px;
+  padding-bottom: 75%;
+}
+
+.button {
+  float: left;
+  position: relative;
+  background-color: #4CAF50;
+  border: none;
+  font-size: 28px;
+  color: #FFFFFF;
+  padding: 20px;
+  width: 200px;
+  text-align: center;
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+  opacity: 0.8;
+  font-family: Helvetica;
+}
+
+.button:after {
+  content: "";
+  background: #f1f1f1;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px !important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s
+}
+
+.button:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s
+}
+.button:hover {
+opacity: 1;
+box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.button:focus {outline:0;}
+
+#b2{
+    float: right;
 }

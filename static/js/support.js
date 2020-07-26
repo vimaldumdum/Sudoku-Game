@@ -4,6 +4,7 @@ function setValue(i, j, val){
             var ids = 9*i +j;
             var n = ids.toString();
             document.getElementById(n).setAttribute("value", val);
+            document.getElementById(n).style.color = "#000000";
             document.getElementById(n).disabled = true;
 }
 
@@ -12,13 +13,15 @@ function validateValue(i, j, val){
             id = id.toString();
             if(solved[i][j] === val){
                 document.getElementById(id).setAttribute("value", val);
+                document.getElementById(id).style.color = "#000000";
                 document.getElementById(id).disabled = true;
             }
             else{
                 document.getElementById(id).style.backgroundColor = "red";
                 document.getElementById(id).value = "";
                 setTimeout(function(){
-                document.getElementById(id).style.backgroundColor = "lightgreen";}, 1000)
+                document.getElementById(id).style.backgroundColor = "transparent";}, 500);
+
             }
 }
 

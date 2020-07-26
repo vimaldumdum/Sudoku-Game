@@ -5,51 +5,53 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static' ,filename='css/sudokuBoard.css') }}">
     <link rel="shortcut icon" href="#" />
     <script type="text/javascript" src="/static/js/support.js"></script>
+
     <title>Sudoku-Board</title>
 </head>
-<body>
+<body style="background-image: url({{ url_for('static', filename='images/back.png') }})">
     <center>
-        <table>
+        <div id="division">
+        <table id="tab">
             <tr>
-                <td><input type="text" maxlength="1" id="0" onclick="clickFun(id)"></td>
-                <td><input type="text" maxlength="1" id="1" onclick="clickFun(id)"></td>
-                <td><input type="text" maxlength="1" id="2" onclick="clickFun(id)"></td>
+                <td id="t1"><input type="text" maxlength="1" id="0" onclick="clickFun(id)"></td>
+                <td id="t2"><input type="text" maxlength="1" id="1" onclick="clickFun(id)"></td>
+                <td id="t3"><input type="text" maxlength="1" id="2" onclick="clickFun(id)"></td>
                 <td><input type="text" maxlength="1" id="3" onclick="clickFun(id)"></td>
                 <td><input type="text" maxlength="1" id="4" onclick="clickFun(id)"></td>
                 <td><input type="text" maxlength="1" id="5" onclick="clickFun(id)"></td>
-                <td><input type="text" maxlength="1" id="6" onclick="clickFun(id)"></td>
-                <td><input type="text" maxlength="1" id="7" onclick="clickFun(id)"></td>
-                <td><input type="text" maxlength="1" id="8" onclick="clickFun(id)"></td>
+                <td id="t5"><input type="text" maxlength="1" id="6" onclick="clickFun(id)"></td>
+                <td id="t6"><input type="text" maxlength="1" id="7" onclick="clickFun(id)"></td>
+                <td id="t4"><input type="text" maxlength="1" id="8" onclick="clickFun(id)"></td>
             </tr>
             <tr>
-                <td><input type="text" maxlength="1" id="9" onclick="clickFun(id)"></td>
-                <td><input type="text" maxlength="1" id="10" onclick="clickFun(id)"></td>
-                <td><input type="text" maxlength="1" id="11" onclick="clickFun(id)"></td>
+                <td id="t7"><input type="text" maxlength="1" id="9" onclick="clickFun(id)"></td>
+                <td id="t8"><input type="text" maxlength="1" id="10" onclick="clickFun(id)"></td>
+                <td id="t9"><input type="text" maxlength="1" id="11" onclick="clickFun(id)"></td>
                 <td><input type="text" maxlength="1" id="12" onclick="clickFun(id)"></td>
                 <td><input type="text" maxlength="1" id="13" onclick="clickFun(id)"></td>
                 <td><input type="text" maxlength="1" id="14" onclick="clickFun(id)"></td>
-                <td><input type="text" maxlength="1" id="15" onclick="clickFun(id)"></td>
-                <td><input type="text" maxlength="1" id="16" onclick="clickFun(id)"></td>
-                <td><input type="text" maxlength="1" id="17" onclick="clickFun(id)"></td>
+                <td id="t10"><input type="text" maxlength="1" id="15" onclick="clickFun(id)"></td>
+                <td id="t11"><input type="text" maxlength="1" id="16" onclick="clickFun(id)"></td>
+                <td id="t12"><input type="text" maxlength="1" id="17" onclick="clickFun(id)"></td>
             </tr>
             <tr>
-                <td><input type="text" maxlength="1" id="18" onclick="clickFun(id)"></td>
-                <td><input type="text" maxlength="1" id="19" onclick="clickFun(id)"></td>
-                <td><input type="text" maxlength="1" id="20" onclick="clickFun(id)"></td>
+                <td id="t13"><input type="text" maxlength="1" id="18" onclick="clickFun(id)"></td>
+                <td id="t14"><input type="text" maxlength="1" id="19" onclick="clickFun(id)"></td>
+                <td id="t15"><input type="text" maxlength="1" id="20" onclick="clickFun(id)"></td>
                 <td><input type="text" maxlength="1" id="21" onclick="clickFun(id)"></td>
                 <td><input type="text" maxlength="1" id="22" onclick="clickFun(id)"></td>
                 <td><input type="text" maxlength="1" id="23" onclick="clickFun(id)"></td>
-                <td><input type="text" maxlength="1" id="24" onclick="clickFun(id)"></td>
-                <td><input type="text" maxlength="1" id="25" onclick="clickFun(id)"></td>
-                <td><input type="text" maxlength="1" id="26" onclick="clickFun(id)"></td>
+                <td id="t16"><input type="text" maxlength="1" id="24" onclick="clickFun(id)"></td>
+                <td id="t17"><input type="text" maxlength="1" id="25" onclick="clickFun(id)"></td>
+                <td id="t18"><input type="text" maxlength="1" id="26" onclick="clickFun(id)"></td>
             </tr>
             <tr>
                 <td><input type="text" maxlength="1" id="27" onclick="clickFun(id)"></td>
                 <td><input type="text" maxlength="1" id="28" onclick="clickFun(id)"></td>
                 <td><input type="text" maxlength="1" id="29" onclick="clickFun(id)"></td>
-                <td><input type="text" maxlength="1" id="30" onclick="clickFun(id)"></td>
-                <td><input type="text" maxlength="1" id="31" onclick="clickFun(id)"></td>
-                <td><input type="text" maxlength="1" id="32" onclick="clickFun(id)"></td>
+                <td id="t19"><input type="text" maxlength="1" id="30" onclick="clickFun(id)"></td>
+                <td id="t20"><input type="text" maxlength="1" id="31" onclick="clickFun(id)"></td>
+                <td id="t21"><input type="text" maxlength="1" id="32" onclick="clickFun(id)"></td>
                 <td><input type="text" maxlength="1" id="33" onclick="clickFun(id)"></td>
                 <td><input type="text" maxlength="1" id="34" onclick="clickFun(id)"></td>
                 <td><input type="text" maxlength="1" id="35" onclick="clickFun(id)"></td>
@@ -58,9 +60,9 @@
                 <td><input type="text" maxlength="1" id="36" onclick="clickFun(id)"></td>
                 <td><input type="text" maxlength="1" id="37" onclick="clickFun(id)"></td>
                 <td><input type="text" maxlength="1" id="38" onclick="clickFun(id)"></td>
-                <td><input type="text" maxlength="1" id="39" onclick="clickFun(id)"></td>
-                <td><input type="text" maxlength="1" id="40" onclick="clickFun(id)"></td>
-                <td><input type="text" maxlength="1" id="41" onclick="clickFun(id)"></td>
+                <td id="t22"><input type="text" maxlength="1" id="39" onclick="clickFun(id)"></td>
+                <td id="t23"><input type="text" maxlength="1" id="40" onclick="clickFun(id)"></td>
+                <td id="t24"><input type="text" maxlength="1" id="41" onclick="clickFun(id)"></td>
                 <td><input type="text" maxlength="1" id="42" onclick="clickFun(id)"></td>
                 <td><input type="text" maxlength="1" id="43" onclick="clickFun(id)"></td>
                 <td><input type="text" maxlength="1" id="44" onclick="clickFun(id)"></td>
@@ -69,53 +71,66 @@
                 <td><input type="text" maxlength="1" id="45" onclick="clickFun(id)"></td>
                 <td><input type="text" maxlength="1" id="46" onclick="clickFun(id)"></td>
                 <td><input type="text" maxlength="1" id="47" onclick="clickFun(id)"></td>
-                <td><input type="text" maxlength="1" id="48" onclick="clickFun(id)"></td>
-                <td><input type="text" maxlength="1" id="49" onclick="clickFun(id)"></td>
-                <td><input type="text" maxlength="1" id="50" onclick="clickFun(id)"></td>
+                <td id="t25"><input type="text" maxlength="1" id="48" onclick="clickFun(id)"></td>
+                <td id="t26"><input type="text" maxlength="1" id="49" onclick="clickFun(id)"></td>
+                <td id="t27"><input type="text" maxlength="1" id="50" onclick="clickFun(id)"></td>
                 <td><input type="text" maxlength="1" id="51" onclick="clickFun(id)"></td>
                 <td><input type="text" maxlength="1" id="52" onclick="clickFun(id)"></td>
                 <td><input type="text" maxlength="1" id="53" onclick="clickFun(id)"></td>
             </tr>
             <tr>
-                <td><input type="text" maxlength="1" id="54" onclick="clickFun(id)"></td>
-                <td><input type="text" maxlength="1" id="55" onclick="clickFun(id)"></td>
-                <td><input type="text" maxlength="1" id="56" onclick="clickFun(id)"></td>
+                <td id="t28"><input type="text" maxlength="1" id="54" onclick="clickFun(id)"></td>
+                <td id="t29"><input type="text" maxlength="1" id="55" onclick="clickFun(id)"></td>
+                <td id="t30"><input type="text" maxlength="1" id="56" onclick="clickFun(id)"></td>
                 <td><input type="text" maxlength="1" id="57" onclick="clickFun(id)"></td>
                 <td><input type="text" maxlength="1" id="58" onclick="clickFun(id)"></td>
                 <td><input type="text" maxlength="1" id="59" onclick="clickFun(id)"></td>
-                <td><input type="text" maxlength="1" id="60" onclick="clickFun(id)"></td>
-                <td><input type="text" maxlength="1" id="61" onclick="clickFun(id)"></td>
-                <td><input type="text" maxlength="1" id="62" onclick="clickFun(id)"></td>
+                <td id="t31"><input type="text" maxlength="1" id="60" onclick="clickFun(id)"></td>
+                <td id="t32"><input type="text" maxlength="1" id="61" onclick="clickFun(id)"></td>
+                <td id="t33"><input type="text" maxlength="1" id="62" onclick="clickFun(id)"></td>
             </tr>
             <tr>
-                <td><input type="text" maxlength="1" id="63" onclick="clickFun(id)"></td>
-                <td><input type="text" maxlength="1" id="64" onclick="clickFun(id)"></td>
-                <td><input type="text" maxlength="1" id="65" onclick="clickFun(id)"></td>
+                <td id="t34"><input type="text" maxlength="1" id="63" onclick="clickFun(id)"></td>
+                <td id="t35"><input type="text" maxlength="1" id="64" onclick="clickFun(id)"></td>
+                <td id="t36"><input type="text" maxlength="1" id="65" onclick="clickFun(id)"></td>
                 <td><input type="text" maxlength="1" id="66" onclick="clickFun(id)"></td>
                 <td><input type="text" maxlength="1" id="67" onclick="clickFun(id)"></td>
                 <td><input type="text" maxlength="1" id="68" onclick="clickFun(id)"></td>
-                <td><input type="text" maxlength="1" id="69" onclick="clickFun(id)"></td>
-                <td><input type="text" maxlength="1" id="70" onclick="clickFun(id)"></td>
-                <td><input type="text" maxlength="1" id="71" onclick="clickFun(id)"></td>
+                <td id="t37"><input type="text" maxlength="1" id="69" onclick="clickFun(id)"></td>
+                <td id="t38"><input type="text" maxlength="1" id="70" onclick="clickFun(id)"></td>
+                <td id="t39"><input type="text" maxlength="1" id="71" onclick="clickFun(id)"></td>
             </tr>
             <tr>
-                <td><input type="text" maxlength="1" id="72" onclick="clickFun(id)"></td>
-                <td><input type="text" maxlength="1" id="73" onclick="clickFun(id)"></td>
-                <td><input type="text" maxlength="1" id="74" onclick="clickFun(id)"></td>
+                <td id="t40"><input type="text" maxlength="1" id="72" onclick="clickFun(id)"></td>
+                <td id="t41"><input type="text" maxlength="1" id="73" onclick="clickFun(id)"></td>
+                <td id="t42"><input type="text" maxlength="1" id="74" onclick="clickFun(id)"></td>
                 <td><input type="text" maxlength="1" id="75" onclick="clickFun(id)"></td>
                 <td><input type="text" maxlength="1" id="76" onclick="clickFun(id)"></td>
                 <td><input type="text" maxlength="1" id="77" onclick="clickFun(id)"></td>
-                <td><input type="text" maxlength="1" id="78" onclick="clickFun(id)"></td>
-                <td><input type="text" maxlength="1" id="79" onclick="clickFun(id)"></td>
-                <td><input type="text" maxlength="1" id="80" onclick="clickFun(id)"></td>
+                <td id="t43"><input type="text" maxlength="1" id="78" onclick="clickFun(id)"></td>
+                <td id="t44"><input type="text" maxlength="1" id="79" onclick="clickFun(id)"></td>
+                <td id="t45"><input type="text" maxlength="1" id="80" onclick="clickFun(id)"></td>
             </tr>
 
         </table>
+            <pre>
+
+
+
+
+
+
+            </pre>
+            <button class="button">Solve</button>
+            <button class="button" id="b2">Exit</button>
+        </div>
         <script>
-            var grid={{grids}}
-            var solve={{solved}}
-            fillValues(grid);
-            getSolved(solve);
+            document.addEventListener("DOMContentLoaded", function() {
+                var grid={{grids}}
+                var solve={{solved}}
+                fillValues(grid);
+                getSolved(solve);
+            });
         </script>
     </center>
 </body>
