@@ -2,11 +2,14 @@ var solved;
 var gameOver = false;
 var lost = false;
 var sec = 0;
+var total;
 
 function pad ( val ) { return val > 9 ? val : "0" + val; }
     setInterval( function(){
-        document.getElementById("seconds").innerHTML=pad(++sec%60);
-        document.getElementById("minutes").innerHTML=pad(parseInt(sec/60,10));
+        if(total != 0){
+            document.getElementById("seconds").innerHTML=pad(++sec%60);
+            document.getElementById("minutes").innerHTML=pad(parseInt(sec/60,10));
+        }
     }, 1000);
 function setValue(i, j, val){
 
@@ -15,6 +18,7 @@ function setValue(i, j, val){
             document.getElementById(n).setAttribute("value", val);
             document.getElementById(n).style.color = "#000000";
             document.getElementById(n).disabled = true;
+
 }
 
 function validateValue(i, j, val){
@@ -24,6 +28,14 @@ function validateValue(i, j, val){
                 document.getElementById(id).setAttribute("value", val);
                 document.getElementById(id).style.color = "#000000";
                 document.getElementById(id).disabled = true;
+                total = total-1;
+                console.log(total.toString());
+                if(total == 0)
+                {
+                    gameOver = true;
+                    lost = false;
+                    endGame(lost);
+                }
             }
             else{
                 document.getElementById(id).style.backgroundColor = "red";
@@ -58,8 +70,11 @@ function clickFun(id){
 
 }
 
-function getSolved(sol){
+function getSolved(sol, miss){
     solved = sol;
+    total = miss;
+    console.log('total found');
+    console.log(total);
 }
 
 function solve(id){
@@ -76,6 +91,7 @@ function solve(id){
 
 function solveFull(){
     document.getElementById("b1").disabled = true;
+    total = 0;
     for(i=0;i<81;i++){
         var id =i.toString();
         if(document.getElementById(id).disabled == false){
@@ -96,8 +112,11 @@ function endGame(lost){
     console.log('working');
     if(lost == true)
         document.getElementById('modalText').innerHTML = "You Lost";
-    else
-        document.getElementById('modalText').innerHTML = "You Won";
+    else{
+        var sec = document.getElementById('seconds').innerHTML;
+        var min = document.getElementById('minutes').innerHTML;
+        document.getElementById('modalText').innerHTML = "You Won in " + min.toString() + "minutes and "+sec.toString()+"seconds";
+    }
     modal.style.display = 'block';
 
     closeButton.addEventListener("click", function(){

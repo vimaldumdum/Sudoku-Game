@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-from backEnd import getGrids, solve, isSafe, getGrid
+from backEnd import solve, getGrid, findMissing
 import copy
 
 
@@ -7,16 +7,18 @@ app = Flask(__name__)
 
 sol = getGrid()
 grid = copy.deepcopy(sol)
+miss = findMissing(grid)
+missing = len(miss)
 #print(grid)
 solve(sol)
 
 
 #print(grid)
-#print(sol)
+print(sol)
 
 @app.route('/')
 def hello():
-    return render_template('board.html', grids = grid, solved = sol)
+    return render_template('board.html', grids = grid, solved = sol, total = missing)
 
 @app.route('/home/<int:name>')
 def hel(name):
