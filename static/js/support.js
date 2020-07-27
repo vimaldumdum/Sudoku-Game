@@ -1,4 +1,13 @@
 var solved;
+var gameOver = false;
+var lost = false;
+var sec = 0;
+
+function pad ( val ) { return val > 9 ? val : "0" + val; }
+    setInterval( function(){
+        document.getElementById("seconds").innerHTML=pad(++sec%60);
+        document.getElementById("minutes").innerHTML=pad(parseInt(sec/60,10));
+    }, 1000);
 function setValue(i, j, val){
 
             var ids = 9*i +j;
@@ -51,5 +60,48 @@ function clickFun(id){
 
 function getSolved(sol){
     solved = sol;
+}
+
+function solve(id){
+    var num = parseInt(id);
+    var j = num%9;
+    num = num - j;
+    var i = num/9;
+
+    document.getElementById(id).setAttribute("value", solved[i][j]);
+    document.getElementById(id).style.color = "#000000";
+    document.getElementById(id).disabled = true;
+
+}
+
+function solveFull(){
+    document.getElementById("b1").disabled = true;
+    for(i=0;i<81;i++){
+        var id =i.toString();
+        if(document.getElementById(id).disabled == false){
+            solve(id);
+        }
+    }
+    gameOver = true;
+    lost = true;
+
+    endGame(lost);
+
+}
+
+function endGame(lost){
+
+    var modal = document.getElementById("simpleModal");
+    var closeButton = document.getElementById("closeBtn");
+    console.log('working');
+    if(lost == true)
+        document.getElementById('modalText').innerHTML = "You Lost";
+    else
+        document.getElementById('modalText').innerHTML = "You Won";
+    modal.style.display = 'block';
+
+    closeButton.addEventListener("click", function(){
+        modal.style.display = 'none';
+    });
 }
 

@@ -11,10 +11,12 @@ td{
 #tab{
     padding: 10px;
 }
+html{
+    background-repeat: repeat-x;
+    background-size: cover;
+}
 body {
   padding: 1rem;
-    overflow: hidden;
-
 }
 input{
     width: 42px;
@@ -27,6 +29,10 @@ input{
     font-size: 25px;
     font-family: Helvetica;
     color: #ff6600;
+}
+
+input:hover:enabled{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 #t1, #t2, #t3, #t4, #t5,
@@ -45,10 +51,14 @@ input{
 
 #division{
     background: rgba(208,208,208, 0.5);
-    width: 35%;
-    height: 10%;
+    width: min-content;
+    height: max-content;
     padding: 10px;
   padding-bottom: 75%;
+    display: block;
+     margin:0px;
+    padding:0px;
+
 }
 
 .button {
@@ -67,6 +77,7 @@ input{
   cursor: pointer;
   opacity: 0.8;
   font-family: Helvetica;
+  margin: 10px;
 }
 
 .button:after {
@@ -88,7 +99,7 @@ input{
   opacity: 1;
   transition: 0s
 }
-.button:hover {
+.button:hover:enabled {
 opacity: 1;
 box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
@@ -97,3 +108,55 @@ box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 #b2{
     float: right;
 }
+
+span{
+    text-align: center;
+    font-size: 50px;
+    font-family: monospace;
+}
+
+#timer{
+    font-size: 50px;
+}
+
+#simpleModal{
+    display: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    line-height: 1.6;
+    overflow: auto;
+}
+
+.modal{
+
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+
+    background-color: rgba(0,0,0, 0.5);
+}
+
+.modalContent{
+    background-color: #f4f4f4;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    height: auto;
+    padding: 5%;
+    width: 30%;
+    padding: 40px;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.close{
+    float: right;
+    color: #ccc;
+}
+.close:hover, .close:focus{
+    cursor: pointer;
+    color: #000000;
+    text-decoration: none;
+}
+

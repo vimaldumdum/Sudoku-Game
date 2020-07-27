@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"  style="background-image: url({{ url_for('static', filename='images/back.png') }})">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static' ,filename='css/sudokuBoard.css') }}">
@@ -8,7 +8,7 @@
 
     <title>Sudoku-Board</title>
 </head>
-<body style="background-image: url({{ url_for('static', filename='images/back.png') }})">
+<body>
     <center>
         <div id="division">
         <table id="tab">
@@ -113,17 +113,22 @@
             </tr>
 
         </table>
-            <pre>
 
-
-
-
-
-
-            </pre>
-            <button class="button">Solve</button>
+                <div id="timer">
+                <span id="minutes"></span>:<span id="seconds"></span>
+                </div>
+            <button class="button" id="b1" onclick="solveFull()">Solve</button>
             <button class="button" id="b2">Exit</button>
+
         </div>
+
+        <div id="simpleModal" class="modal">
+            <div class="modalContent">
+                <span class="close" id="closeBtn">&times;</span>
+                <p id="modalText"></p>
+            </div>
+        </div>
+        </center>
         <script>
             document.addEventListener("DOMContentLoaded", function() {
                 var grid={{grids}}
@@ -132,6 +137,6 @@
                 getSolved(solve);
             });
         </script>
-    </center>
+
 </body>
 </html>
