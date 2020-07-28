@@ -7,10 +7,6 @@ grid = [[3, 0, 6, 5, 0, 8, 4, 0, 0],
             [1, 3, 0, 0, 0, 0, 2, 5, 0],
             [0, 0, 0, 0, 0, 0, 0, 7, 4],
             [0, 0, 5, 2, 0, 6, 3, 0, 0]]
-sol = list(grid)
-
-def getGrids():
-    return grid, sol
 
 def findMissing(grid):
     miss = list()

@@ -1,3 +1,8 @@
+html{
+    background-repeat: repeat-x;
+    background-size: cover;
+}
+
 .button {
   position: relative;
   background-color: #4CAF50;
