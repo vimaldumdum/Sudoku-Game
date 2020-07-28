@@ -39,5 +39,9 @@ def play():
    # print(sol)
     return render_template('board.html', grids = grid, solved = sol, total = missing)
 
+@app.route('/exit')
+def exit():
+    return render_template('exit.html')
+
 if __name__ == "__main__":
     app.run(debug = True)
