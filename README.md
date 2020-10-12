@@ -11,3 +11,9 @@ Star if you like....
 Thank you.
 
 vimaldumdum
+
+Screenshots:
+
+![](screenshots/start.jpg)
+![](screenshots/wrong.jpg)
+![](screenshots/lost.jpg)
